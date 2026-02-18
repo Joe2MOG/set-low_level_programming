@@ -1,0 +1,11 @@
+# Generated files
+*.o
+*.i
+*.s
+c
+a.out
+
+# Editor files
+*.swp
+*.swo
+*~
