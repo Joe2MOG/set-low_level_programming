@@ -15,14 +15,15 @@ char *_strcat(char *dest, char *src)
 	while (*ptr)
 		ptr++;
 
-	/* copy src including null terminator */
+	/* copy src including its */
+	/* null terminator */
 	while (*src)
 	{
 		*ptr = *src;
 		ptr++;
 		src++;
 	}
-	*ptr = '\0'; /* add null terminator (though src's null would have been copied? Actually we stop when *src is null, so we need to add it) */
+	*ptr = '\0';
 
 	return (dest);
 }
