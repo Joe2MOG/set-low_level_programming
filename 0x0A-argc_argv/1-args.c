@@ -6,9 +6,9 @@
  */
 void _putint(int n)
 {
-    if (n / 10)
-        _putint(n / 10);
-    _putchar('0' + (n % 10));
+	if (n / 10)
+		_putint(n / 10);
+	_putchar('0' + (n % 10));
 }
 
 /**
@@ -20,8 +20,8 @@ void _putint(int n)
  */
 int main(int argc, char *argv[])
 {
-    (void)argv;
-    _putint(argc - 1);
-    _putchar('\n');
-    return (0);
+	(void)argv;
+	_putint(argc - 1);
+	_putchar('\n');
+	return (0);
 }
