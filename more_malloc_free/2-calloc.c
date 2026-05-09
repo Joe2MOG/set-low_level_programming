@@ -15,12 +15,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	total = nmemb * size;   /* potential overflow not checked; real calloc checks it */
+	total = nmemb * size;
 	ptr = malloc(total);
 	if (ptr == NULL)
 		return (NULL);
 
-	/* set all bytes to zero */
 	for (i = 0; i < total; i++)
 		ptr[i] = 0;
 
