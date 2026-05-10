@@ -1,6 +1,21 @@
 #include "lists.h"
 
 /**
+ * _strlen - compute the length of a string
+ * @s: the string
+ *
+ * Return: number of characters before '\0'
+ */
+static unsigned int _strlen(const char *s)
+{
+	unsigned int len = 0;
+
+	while (s[len])
+		len++;
+	return (len);
+}
+
+/**
  * add_node - adds a new node at the beginning of a list_t list
  * @head: double pointer to the head of the list
  * @str: string to duplicate and store in the new node
@@ -22,7 +37,7 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	new_node->len = strlen(str);
+	new_node->len = _strlen(str);
 	new_node->next = *head;
 	*head = new_node;
 
