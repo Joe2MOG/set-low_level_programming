@@ -1,23 +1,22 @@
 #include <stdio.h>
-#include <string.h>
 
 /**
- * main - generates a key for crackme5
- * @argc: argument count
- * @argv: argument vector
+ * main - generates a valid key for crackme5
+ * @ac: argument count
+ * @av: argument vector
  *
  * Return: 0 on success, 1 on error
  */
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-	int sum = 0, i = 0;
+	int sum = 0, i;
 
-	if (argc != 2)
+	if (ac != 2)
 		return (1);
 
-	while (argv[1][i])
-		sum += argv[1][i++];
+	for (i = 0; av[1][i] != '\0'; i++)
+		sum += (unsigned char)av[1][i];
 
-	printf("%d", sum ^ i);
+	printf("%d", sum * i);   /* sum * length, no newline */
 	return (0);
 }
